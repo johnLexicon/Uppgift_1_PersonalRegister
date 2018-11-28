@@ -9,11 +9,11 @@ namespace PersonalRegister
     class Register
     {
 
-        private List<Employee> employees = new List<Employee>();
+        private List<Employee> _employees = new List<Employee>();
 
         internal void PrintEmployees()
         {
-            foreach(var employee in employees)
+            foreach(var employee in _employees)
             {
                 Console.WriteLine(employee);
             }
@@ -21,7 +21,13 @@ namespace PersonalRegister
 
         internal void AddEmployee(Employee employee)
         {
-            employees.Add(employee);
+            _employees.Add(employee);
+        }
+
+        internal List<Employee> GetEmployees()
+        {
+            //Shallow copy
+            return new List<Employee>(_employees);
         }
     }
 }
