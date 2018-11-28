@@ -9,7 +9,6 @@ namespace PersonalRegister
     class Program
     {
 
-
         public static void AddEmployee(Register register)
         {
             var employee = new Employee();
@@ -18,7 +17,7 @@ namespace PersonalRegister
             employee.Name = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(employee.Name))
             {
-                employee.Name = "Whomever";
+                employee.Name = "Nobody";
             }
 
             Console.Write("Salary: ");
@@ -28,11 +27,12 @@ namespace PersonalRegister
             }
             catch (FormatException)
             {
-                employee.Salary = 0.0f;
+                Console.WriteLine("No salary is given. Salary is set to 0.0");
             }
             
             register.AddEmployee(employee);
         }
+
 
         static void Main(string[] args)
         {
