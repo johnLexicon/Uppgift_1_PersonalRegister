@@ -63,7 +63,9 @@ namespace PersonalRegister
                         break;
                     case 2:
                         Console.WriteLine("-----------------Employees------------------");
-                        register.PrintEmployees();
+                        List<Employee> list = register.GetEmployees();
+                        IPrinter printer = new ConsolePrinter();
+                        printer.PrintContent<Employee>(list);
                         Console.WriteLine("Press enter to continue");
                         Console.ReadLine();
                         break;

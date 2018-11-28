@@ -11,14 +11,6 @@ namespace PersonalRegister
 
         private List<Employee> _employees = new List<Employee>();
 
-        internal void PrintEmployees()
-        {
-            foreach(var employee in _employees)
-            {
-                Console.WriteLine(employee);
-            }
-        }
-
         internal void AddEmployee(Employee employee)
         {
             _employees.Add(employee);
